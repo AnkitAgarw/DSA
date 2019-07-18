@@ -29,10 +29,11 @@ void merge( int* A,int start,int mid,int end){
 
 }
 void mergeSort(int* arr,int start,int end){
-	mergeSort(arr,start,(start+end)/2);
-	mergeSort(arr,(start+end)/2+1,end);
-	merge(arr,start,(start+end)/2,end);
-	
+	if(start<end){
+		mergeSort(arr,start,(start+end)/2);
+		mergeSort(arr,(start+end)/2+1,end);
+		merge(arr,start,(start+end)/2,end);
+	}
 
 }
 void printArr(int* A,int n){
